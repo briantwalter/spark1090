@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export PYSPARK_PYTHON=/opt/anaconda2/bin/python
+
+spark-submit --driver-java-options "-Dlog4j.configuration=file://`pwd`/log4j.properties" --driver-cores 1 --num-executors 2 ${1} centos:2181 dump1090_sink2 hdfs:///tmp
